@@ -1,6 +1,7 @@
 
 import './App.css'
 import Deposit from "./deposit";
+import Withdraw from "./withdraw";
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <div>
         <Deposit />
+        <Withdraw />
 
       </div>
       
