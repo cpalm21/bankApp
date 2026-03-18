@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-function Deposit() {
+function Withdraw() {
   const [amount, setAmount] = useState("");
   const [balance, setBalance] = useState<number | null>(null);
   const [message, setMessage] = useState("");
 
-  async function handleDeposit() {
+  async function handleWithdraw() {
     setMessage("");
 
     try {
-      const response = await fetch("http://localhost:8080/deposit", {
+      const response = await fetch("http://localhost:8080/withdraw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -33,7 +33,7 @@ function Deposit() {
 
   return (
     <div>
-      <h2>Deposit</h2>
+      <h2>Withdraw</h2>
 
       <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
         <input
@@ -42,7 +42,7 @@ function Deposit() {
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
-        <button onClick={handleDeposit}>Deposit Money</button>
+        <button onClick={handleWithdraw}>Withdraw Money</button>
       </div>
 
       {message && <p>{message}</p>}
@@ -51,4 +51,4 @@ function Deposit() {
   );
 }
 
-export default Deposit;
+export default Withdraw;
